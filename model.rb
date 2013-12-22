@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# encoding: utf-8
 
 class Model
 
@@ -33,6 +33,8 @@ attr_accessor :str_buf
   end
 
   def connect
+    # ローカルで実験する場合は以下を使用してください
+    # @s = TCPSocket.open("localhost", 3002)
     @s = TCPSocket.open("intotheprow.rackbox.net", 40004)
     @s.puts("name")
     @s.puts(@name)
